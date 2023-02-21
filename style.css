@@ -1,0 +1,410 @@
+/*============= GERAL =============*/
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+:root{
+    --primary-color: #00856F; /* Cor primária (Botões, palavras de destaque, etc) */
+    --headline: #212529; /* Cor das Headlines (h1, h2, h3, etc) */
+    --paragraph: #495057; /* Cor dos paragráfos */
+
+    --brand-beige: #FFFAF1;
+    --brand-light: #DCE9E2;
+    font-size: 62.5%; /* 1rem = 10px */
+
+    --nav-height: 7.2rem;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.6rem;
+
+    text-align: center;
+    background: #F7F9F9;;
+}
+
+.wrapper{
+    width: 37.5rem;
+    margin-inline: auto;
+    padding-inline: 2.4rem;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+ul{
+    list-style: none;
+}
+
+section{
+    padding-block: 10rem;
+}
+
+/*============= HEADER =============*/
+
+#home{ /* Tudo que está na caixa HEADER não irá estrapolar estes limites (exceto algumas coisinhas) */
+    padding-top: calc(4.1rem + var(--nav-height));
+}
+
+#home h4{
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    line-height: 150%;
+    margin-bottom: 1.6rem;
+}
+
+#home h1{
+    color: var(--headline);
+    font-size: 3.4rem;
+    line-height: 130%;
+    margin-bottom: 2.4rem;
+}
+
+#home p{
+    font-size: 1.8rem;
+    line-height: 150%;
+    font-weight: 400;
+    color: var(--paragraph);
+    margin-bottom: 3.2rem;
+}
+
+#home button{
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 700;
+
+    background: var(--primary-color);
+    border: none;
+    margin-bottom: 6.0rem;
+
+    border-radius: 4.0rem;
+    height: 5.2rem;
+    width: 26.3rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.6rem;
+
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#home div.stats{
+    width: 32.7rem;
+    padding-block: 4rem; /* o BLOCK adicionará um padding no eixo Y. Em cima e em baixo. */
+
+    margin-inline: auto; /* Margin Inline: Serve para o eixo X, funcionando como LEFT e RIGHT */
+    
+    background-color: var(--brand-beige);
+
+    display: flex; /* Por padrão o FLEX coloca um ao lado do outro */
+    flex-direction: column; /* Mas, aqui setei a direção do FLEX para COLUNAS */
+    justify-content: center;
+    gap: 6rem;
+
+    border-radius: 0.6rem;
+    border: 0.1rem solid var(--brand-light);
+}
+
+#home div.stat h3{
+    font-size: 4.8rem;
+    line-height: 130%;
+    color: var(--headline);
+
+    margin-bottom: 0.4rem;
+}
+
+#home div.stat p{
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    line-height: 150%;
+    margin: 0;
+}
+
+#home img.mulher{
+    width: 26.1rem;
+    display: block;
+    margin-inline: auto;
+    object-position: 0 2rem;
+}
+
+#home::before{ /* Before: Antes | Tudo que vir antes do conteúdo do HEADER */
+    content: "";
+    width: 100%;
+    height: calc(108rem + var(--nav-height));
+    background-color: var(--brand-light);
+    display: block;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/*============= MENU DE NAVEGAÇÃO =============*/
+
+nav{
+    display: flex;
+
+    height: var(--nav-height);
+
+    position: fixed;
+    top: 0;
+    width: 100vw;
+
+    z-index: 100;
+}
+
+nav div.wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav div.wrapper .treebar{
+    position: relative;
+    right: 11rem;
+}
+
+nav.scroll{
+    background-color: var(--primary-color);
+}
+
+nav.scroll svg path{
+    fill: white;
+}
+
+nav.scroll div.wrapper a.treebar svg path{
+    stroke: white;
+}
+
+/*============= MENU EXPANDIDO =============*/
+
+body.menu-expanded{
+    overflow: hidden;
+}
+
+.menu, 
+.close-menu, 
+body.menu-expanded .open-menu{
+    opacity: 0;
+    visibility: hidden;
+}
+
+body.menu-expanded .menu, 
+body.menu-expanded .close-menu{
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu{
+    transform: translateY(100%);
+}
+
+body.menu-expanded .menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--primary-color);
+
+    width: 100vw; /* Widht: Largura */
+    height: 100vh; /* Height: Altura */
+
+    transition: transform 300ms;
+    transform: translateY(0);
+}
+
+body.menu-expanded nav{
+    position: fixed;
+    width: 100vw;
+}
+
+.abas-menu{
+    display: flex;
+    flex-direction: column;
+    gap: 4.8rem;
+    margin-top: 6rem;
+
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 3.1rem;
+}
+
+.abas-menu li a{ /* Precisei acesar um por um, pois o A tem mais importancia no CSS */
+    color: var(--brand-beige);
+    text-decoration: none;
+}
+
+.button-agende{
+    padding: 1.6rem 3.2rem;
+    gap: 1.6rem;
+    display: inline-block;
+    margin-top: 4.8rem;
+    margin-bottom: 8rem;
+
+    background: white;
+    border-radius: 4rem;
+    width: 27.4rem;
+    height: 5.5rem;
+    left: 5rem;
+    top: 44.8rem;
+
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 2.3rem;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.social{
+    display: flex; /* Fazem os itens ficarem um ao lado do outro */
+    gap: 3.2rem; /* GAP é o ESPAÇAMENTO ENTRE OS ITENS */
+    align-items: center;
+    justify-content: center; /* COLOCA OS ITENS NO CENTRO DA PÁGINA */
+}
+
+nav button{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+div.wrapper a.logo{
+    z-index: 100;
+}
+
+body.menu-expanded div.wrapper a.logo svg path{
+    fill: white;
+}
+
+div.logo-menu{ /* Por padrão, esta classe estará invisível */
+    opacity: 0;
+    visibility: hidden;
+}
+
+body.menu-expanded div.logo-menu{ /* Mas, ao adicionar a clase Menu-Expanded no Body, aparecerá */
+    opacity: 1;
+    visibility: visible;
+
+    width: 37.5rem;
+    height: 7.2rem;
+    display: flex; /* Alinhei tudo */
+    margin: auto; /* Coloquei TODAS as margens no AUTO, assim centralizando o CONTEUDO */
+    justify-content: end; /* Coloquei todo o conteúdo para o FIM */
+    align-items: center; /* Alinhei os itens para o centro da linha */
+    padding-right: 2.4rem; /* Coloquei um PADDING DIREITO de 24px para ter um espaçamento do conteudo para o fim */
+}
+
+/*============= SERVIÇOS =============*/
+
+#services{
+ /* Height: Altura */
+    justify-content: center;
+}
+
+#services h4{
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 150%;
+    letter-spacing: 0.08em;
+    color: var(--primary-color);
+
+    margin-bottom: 1.6rem;
+}
+
+#services h2{
+    text-align: center;
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 3.9rem;
+    color: var(--headline);
+
+    width: 31.4rem;
+    height: 11.7rem;
+    left: 3rem;
+    top: 35.5rem;
+
+    margin-bottom: 6rem;
+}
+
+#services div.card{
+    margin-bottom: 3.2rem;
+    text-align: left;
+
+    background-color: white;
+    border: 0.1rem solid var(--brand-light);
+    border-radius: 0.6rem;
+
+    width: 32.7rem;
+    height: 20.7rem;
+    right: 2.4rem;
+    top: 53.2rem;
+
+    gap: 1.6px;
+    padding: 2.4rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#services div.card img{
+    margin-bottom: 1.6rem;
+}
+
+#services div.card h3{
+    margin-bottom: 1.6rem;
+    color: var(--headline);
+}
+
+#services div.card p{
+    color: #495057;
+}
+
+/*============= SOBRE =============*/
+
+#info{
+    text-align: left;
+    background: var(--brand-beige);
+}
+
+#info h4{
+    color: var(--primary-color);
+    letter-spacing: 0.08em;
+    margin-bottom: 1.6rem;
+
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 150%;
+}
+
+#info h2{
+    color: var(--headline);
+    margin-bottom: 2.4rem;
+
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 3.9rem;
+}
+
+#info p{
+    color: #495057;
+
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 150%;
+
+    margin-bottom: 6rem;
+}
