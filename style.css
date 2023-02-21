@@ -211,6 +211,10 @@ body.menu-expanded .close-menu{
     transform: translateY(100%);
 }
 
+body.menu-expanded .wrapper{ /* Fiz isso para quando for Menu-Expanded, o padding alinhar tudo */
+    padding-right: 3rem;
+}
+
 body.menu-expanded .menu{
     position: fixed;
     top: 0;
