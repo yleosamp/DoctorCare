@@ -13,6 +13,8 @@
 
     --brand-beige: #FFFAF1;
     --brand-light: #DCE9E2;
+
+    --hover-dark: #00453A;
     font-size: 62.5%; /* 1rem = 10px */
 
     --nav-height: 7.2rem;
@@ -77,27 +79,6 @@ section{
     margin-bottom: 3.2rem;
 }
 
-#home button{
-    color: white;
-    font-size: 1.4rem;
-    font-weight: 700;
-
-    background: var(--primary-color);
-    border: none;
-    margin-bottom: 6.0rem;
-
-    border-radius: 4.0rem;
-    height: 5.2rem;
-    width: 26.3rem;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1.6rem;
-
-    margin-right: auto;
-    margin-left: auto;
-}
 
 #home div.stats{
     width: 32.7rem;
@@ -149,6 +130,12 @@ section{
     top: 0;
     left: 0;
     z-index: -1;
+}
+
+#home a.button{
+    margin-inline: auto;
+    margin-bottom: 6.1rem;
+    margin-top: 3.2rem;
 }
 
 /*============= MENU DE NAVEGAÇÃO =============*/
@@ -411,4 +398,118 @@ body.menu-expanded div.logo-menu{ /* Mas, ao adicionar a clase Menu-Expanded no 
     line-height: 150%;
 
     margin-bottom: 6rem;
+}
+
+#info img{
+    width: 32.7rem;
+    height: 28.2rem;
+    left: 2.4rem;
+    top: 58.7rem;
+}
+
+/*============= CONTATO =============*/
+
+#contact h2{
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 3.9rem;
+    color: var(--headline);
+
+    width: 29.7rem;
+    height: 7.8rem;
+    left: 2.4rem;
+    top: 10rem;
+
+    text-align: left;
+
+    margin-bottom: 3.2rem;
+}
+
+#contact p{
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 150%;
+
+    text-align: left;
+    gap: 0.8rem;
+
+    color: #495057;
+
+    display: flex;
+}
+
+#contact p.location{
+    margin-bottom: 1.6rem;
+}
+
+a.button{
+    margin-top: 3.2rem;
+
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+
+    background-color: var(--primary-color);
+    padding: 1.6rem 3.2rem;
+    gap: 1.6rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+
+    border-radius: 4rem;
+
+    width: 26.7rem;
+    height: 5.6rem;
+    left: 2.4rem;
+    top: 30.6rem;
+
+    transition: background 200ms;
+}
+
+a.button:hover{
+    background-color: var(--hover-dark);
+}
+
+#contact img.boy{
+    margin-top: 6rem;
+    width: 32.4rem;
+    height: 21.3rem;
+    left: 2.7rem;
+    top: 42.2rem;
+}
+
+/*============= FOOTER =============*/
+
+#end{
+    text-align: left;
+
+    background-color: var(--primary-color);
+
+    margin-inline: auto;
+    padding-block: 6rem;
+}
+
+#end img.logo{
+    margin-bottom: 2.4rem;
+}
+
+#end .social{
+    justify-content: left;
+}
+
+#end p{
+    color: var(--brand-beige);
+}
+
+#end p.copy{
+    margin-bottom: 1.2rem;
+}
+
+#end p.all{
+    margin-bottom: 3.2rem;
 }
