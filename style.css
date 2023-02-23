@@ -29,7 +29,7 @@ body{
     font-size: 1.6rem;
 
     text-align: center;
-    background: #F7F9F9;;
+    background: #F7F9F9;
 }
 
 .wrapper{
@@ -409,6 +409,10 @@ body.menu-expanded div.logo-menu{ /* Mas, ao adicionar a clase Menu-Expanded no 
 
 /*============= CONTATO =============*/
 
+#contact{
+    background-color: white;
+}
+
 #contact h2{
     font-weight: 700;
     font-size: 3rem;
@@ -557,6 +561,14 @@ a.button:hover{
         width: min(136.6rem, 100%);
         display: grid;
     }
+
+    body{
+        overflow: auto;
+    }
+
+    section{
+        padding-block: 16rem;
+    }
     /* -- NAVIGATION -- */
 
     /* RESET */
@@ -604,7 +616,6 @@ a.button:hover{
 
     nav#navigation .menu ul.abas-menu{
         display: flex;
-        gap: 3.2rem;
     }
 
     nav#navigation .menu ul li a{
@@ -677,6 +688,10 @@ a.button:hover{
         opacity: 1;
         font-weight: 700;
     }
+
+    /* EFFECT */
+
+    
 
     /* -- HOME -- */
 
@@ -773,9 +788,120 @@ a.button:hover{
         position: fixed;
         margin-right: 30rem;
     }
-    /* QUE GAMBIARRA EM */
+
     header#home .stats .divider2{
         position: fixed;
         margin-left: 40rem;
+    }
+
+    /* -- SERVIÇOS -- */
+
+    #services header h2{
+        margin-inline: auto;
+        text-align: center;
+
+        font-weight: 700;
+        font-size: 4rem;
+        line-height: 5.2rem;
+        text-align: center;
+
+        width: 49.7rem;
+        height: 10.4rem;
+        left: 43.5rem;
+        top: 30.0rem;
+    }
+
+    #services .cards{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 4rem;
+        padding-inline: 12rem;
+    }
+
+    /* -- INFO -- */
+    .col-a{
+        grid-area: A;
+    }
+    .col-b{
+        grid-area: B;
+    }
+
+    #info .wrapper{
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 'B A';
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 6.7rem;
+        margin: auto;
+    }
+
+    #info h2{
+        font-weight: 700;
+        font-size: 4rem;
+        line-height: 5.2rem;
+
+        width: 44.7rem;
+        height: 10.4rem;
+        left: 67.0rem;
+        top: 23.4rem;
+    }
+
+    #info p{
+        font-weight: 400;
+        font-size: 1.6rem;
+        line-height: 150%;
+
+        width: 57.3rem;
+        height: 16.8rem;
+        left: 67.0rem;
+        top: 36.2rem;
+    }
+
+    #info img{
+        width: 48rem;
+        height: 41.4rem;
+        left: 12.3rem;
+        top: 16rem;
+
+    }
+
+    #info .col-a{
+        align-self: center;
+    }
+
+    /* -- CONTATO -- */
+
+    #contact{
+        background-color: white;
+    }
+
+    #contact .wrapper{
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 'A B';
+        gap: 14.1rem;
+    }
+
+    #contact img.boy{
+        width: 575px;
+        height: 379px;
+        left: 668px;
+        top: 160px;
+    }
+
+    #contact .col-a{
+        align-self: center;
+    }
+
+    /* -- FOOTER -- */
+
+    #end .wrapper{
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 'A B';
+    }
+
+    #end .col-b{
+        align-self: center;
+        justify-self: flex-end;
     }
 }

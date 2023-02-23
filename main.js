@@ -8,6 +8,11 @@ up.classList.remove('show');
 function onScroll(){
     showNavOnScroll()
     upButton()
+    sectionSelector()
+}
+
+function sectionSelector(){
+    
 }
 
 function showNavOnScroll(){
