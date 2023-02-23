@@ -81,7 +81,7 @@ section{
 
 
 #home div.stats{
-    width: 32.7rem;
+    width: 100%;
     padding-block: 4rem; /* o BLOCK adicionará um padding no eixo Y. Em cima e em baixo. */
 
     margin-inline: auto; /* Margin Inline: Serve para o eixo X, funcionando como LEFT e RIGHT */
@@ -512,4 +512,270 @@ a.button:hover{
 
 #end p.all{
     margin-bottom: 3.2rem;
+}
+
+/*============= UP BUTTON =============*/
+
+#up{
+    position: fixed;
+    bottom: 1rem;
+    right: 2.5rem;
+    visibility: hidden;
+
+    opacity: 0;
+    transform: translateY(100%);
+}
+
+#up.show{
+    visibility: visible;
+    transition: 200ms;
+
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.divider1{
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    padding-left: 200000px;
+}
+
+.divider2{
+    position: fixed;
+    visibility: hidden;
+    opacity: 1;
+    padding-left: 200000000000000px;
+}
+
+/*============= DESKTOP =============*/
+
+@media (min-width: 1024px){
+
+    /* -- GERAL -- */
+    .wrapper{
+        width: min(136.6rem, 100%);
+        display: grid;
+    }
+    /* -- NAVIGATION -- */
+
+    /* RESET */
+    nav#navigation .wrapper *{
+        margin: 0;
+        padding: 0;
+        visibility: initial;
+        display: initial;
+        opacity: initial;
+        flex-direction: initial;
+        position: initial;
+        font-size: initial;
+        transform: initial;
+        color: initial;
+        background-color: initial;
+        font-weight: initial;
+    }
+
+    header#home .divider1{
+        position: initial;
+        visibility: initial;
+        opacity: initial;
+        padding-left: initial;
+    }
+
+    header#home .divider2{
+        position: initial;
+        visibility: initial;
+        opacity: initial;
+        padding-left: initial;
+    }
+
+    nav#navigation .close-menu,
+    nav#navigation .open-menu,
+    nav#navigation .social{
+        display: none;
+    }
+
+    nav#navigation .menu{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 85%;
+    }
+
+    nav#navigation .menu ul.abas-menu{
+        display: flex;
+        gap: 3.2rem;
+    }
+
+    nav#navigation .menu ul li a{
+        transition: 200ms;
+        color: var(--primary-color);
+        opacity: 0.7;
+    }
+
+    nav#navigation.scroll .menu ul li a{
+        color: #F7F9F9;
+        opacity: 0.6;
+    }
+
+    nav#navigation .menu ul li a::after{
+        content: '';
+        height: 0.2rem;
+        background-color: var(--primary-color);
+        width: 0%;
+
+        position: relative;
+        bottom: -1.95rem;
+
+        display: block;
+        transform: padding-inline(0rem);
+        left: -0.75rem;
+    }
+
+    nav#navigation .menu ul li a:hover::after{
+        transition: 200ms;
+        padding-inline: 0.8rem;
+        width: 100%;
+    }
+
+    nav#navigation.scroll .menu ul li a::after{
+        background-color: white;
+    }
+
+    nav#navigation .menu .button-agende{
+        border: 0.15rem solid #00856F;
+        border-radius: 4rem;
+
+
+        color: var(--primary-color);
+        font-weight: 700;
+        box-sizing: border-box;
+        font-size: 1.4rem;
+
+        width: 19rem;
+        height: 3.8rem;
+        left: 105.3rem;
+        top: 1.5rem;
+
+
+    }
+
+    nav#navigation.scroll .menu .button-agende{
+        border: 0.15rem solid white;
+        border-radius: 4rem;
+
+        color: white;
+        font-weight: 700;
+        box-sizing: border-box;
+    }
+
+    nav#navigation .menu .abas-menu li a{
+        transition: opacity 400ms;
+    }
+
+    nav#navigation .menu .abas-menu li a:hover{
+        opacity: 1;
+        font-weight: 700;
+    }
+
+    /* -- HOME -- */
+
+    header#home::before{
+        height: calc(97% - var(--nav-height));
+    }
+
+    header#home{
+        padding-top: var(--nav-height);
+    }
+
+    header#home .wrapper{
+        grid-template-columns: 60.5rem 1fr;
+        grid-template-areas: 
+        'A B' 
+        'C C';
+    }
+
+    header#home .col-a{
+        grid-area: A;
+        align-self: center;
+    }
+
+    header#home .col-b{
+        grid-area: B
+    }
+
+    header#home .col-c{
+        grid-area: C;
+        flex-direction: row;
+    }
+
+    header#home img.mulher{
+        width: 42rem;
+        height: 54.7rem;
+    }
+
+    header#home{
+        text-align: left;
+    }
+
+    header#home h1{
+        font-weight: 700;
+        font-size: 5.2rem;
+        line-height: 130%;
+        color: var(--headline);
+
+        width: 60.5rem;
+        height: 13.6rem;
+        left: 12.3rem;
+        top: 18.9rem;
+    }
+
+    header#home p{
+        font-weight: 400;
+        font-size: 1.8rem;
+        line-height: 150%;
+
+        width: 58.5rem;
+        height: 5.4rem;
+        left: 12.3rem;
+        top: 34.9rem;
+    }
+
+    header#home a.button{
+        margin-left: 0;
+    }
+
+    header#home .mulher{
+        width: 42.0rem;
+        height: 54.7rem;
+        left: 77.9rem;
+        top: 7.6rem;
+    }
+
+    header#home .stat p{ /* Fiz isso tudo pois em algum lugar do CSS eu coloquei alguma resolução em todos os P, então achei mais fácil arrumar o P diretamente aqui */
+        width: 19rem;
+    }
+
+    header#home .stat{
+        width: 16.7rem;
+        height: 9rem;
+        flex-direction: row;
+    }
+
+    header#home .stats{
+        flex-direction: row; /* Faz fileiras caso tenha um Display: Flex */
+        text-align: center; /* Alinha o texto para o centro */
+        gap: 20rem; /* Faz um espaçamento entre os itens */
+        padding: 6rem;
+    }
+
+    header#home .stats .divider1{
+        position: fixed;
+        margin-right: 30rem;
+    }
+    /* QUE GAMBIARRA EM */
+    header#home .stats .divider2{
+        position: fixed;
+        margin-left: 40rem;
+    }
 }

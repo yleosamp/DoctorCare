@@ -49,7 +49,7 @@
                     <li><a onclick="onCloseClick()" href="#info">Sobre</a></li>
                 </ul>
 
-                <a class="button-agende" href="#">AGENDE SUA CONSULTA</a>
+                <button class="button-agende" href="#">AGENDAR CONSULTA</button>
 
                 <ul class="social">
                     <li><a target="_blank" href="https://instagram.com"><img src="/assets/insta.svg" alt="Instagram"></a></li>
@@ -77,34 +77,48 @@
 
         <div class="wrapper">
 
-            <h4>BOAS VINDAS A DOCTORCARE 👋</h4>
-            <h1>Assistência médica simplificada para todos</h1>
+            <div class="col-a"> <!-- CONTEÚDO -->
 
-            <p>
-            Os médicos da DoctorCare vão além dos sintomas para tratar a causa raiz de sua
-            doença e proporcionar uma cura a longo prazo.
-            </p>
+                <h4>BOAS VINDAS A DOCTORCARE 👋</h4>
+                <h1>Assistência médica simplificada para todos</h1>
 
-            <a href="#contact" class="button">
-            <img class="whatsapp" src="/assets/whatsapp.svg" alt="Ícone do WhatsApp"/>   
-            AGENDE SUA CONSULTA
-            </a>
+                <p>
+                Os médicos da DoctorCare vão além dos sintomas para tratar a causa raiz de sua
+                doença e proporcionar uma cura a longo prazo.
+                </p>
 
-            <img class="mulher" src="/assets/mulher.png" alt="Mulher negra com um moletom verde e sorrindo"/>
+                <a href="#contact" class="button">
+                <img class="whatsapp" src="/assets/whatsapp.svg" alt="Ícone do WhatsApp"/>   
+                AGENDE SUA CONSULTA
+                </a>
 
-            <div class="stats">
-                <div class="stat">
-                    <h3>+3.500</h3>
-                    <p>Pacientes atendidos</p>
+            </div>
+
+            <div class="col-b"> <!-- IMAGEM MULHER -->
+                <img class="mulher" src="/assets/mulher.png" alt="Mulher negra com um moletom verde e sorrindo"/>
+            </div>
+
+            <div class="col-c"> <!-- STATS -->
+
+                <div class="stats">
+                    <div class="stat">
+                        <h3>+3.500</h3>
+                        <p>Pacientes atendidos</p>
+                    </div>
+                    <div class="stat">
+                        <h3>+15</h3>
+                        <p>Especialistas disponíveis</p>
+                    </div>
+                    <div class="stat">
+                        <h3>+10</h3>
+                        <p>Anos no mercado</p>
+                    </div>
+
+                    <div class="divider1"><img src="/assets/divider.svg" alt=""></div>
+                    <div class="divider2"><img src="/assets/divider.svg" alt=""></div>
+                
                 </div>
-                <div class="stat">
-                    <h3>+15</h3>
-                    <p>Especialistas disponíveis</p>
-                </div>
-                <div class="stat">
-                    <h3>+10</h3>
-                    <p>Anos no mercado</p>
-                </div>
+
             </div>
 
         </div>
@@ -208,6 +222,10 @@
 
         </div>
     </footer>
+
+    <a id="up" class="show" href="#home">
+        <img src="/assets/up-button.svg" alt="Botão para voltar a página inicial">
+    </a>
 
     <script src="https://unpkg.com/scrollreveal"></script> <!-- SCROLL REVEAL LIB -->
     <script src="main.js"></script>
