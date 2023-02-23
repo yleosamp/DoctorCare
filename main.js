@@ -8,11 +8,43 @@ up.classList.remove('show');
 function onScroll(){
     showNavOnScroll()
     upButton()
-    sectionSelector()
+    sectionSelectorActive(home)
+    sectionSelectorActive(services)
+    sectionSelectorActive(info)
+    sectionSelectorActive(contact)
+    sectionSelectorActive(end)
 }
 
-function sectionSelector(){
-    
+function sectionSelectorActive(section){
+    const targetLine = scrollY + innerHeight / 2
+
+    // O topo do seção
+    const sectionTop = section.offsetTop
+
+    // A altura da seção
+    const sectionHeight = section.offsetHeight
+
+    // Verificar se o topo da section chegou/ultrapassou a linha alvo
+    const sectionTopReachOrPassedTagetLine = targetLine >= sectionTop
+
+    // A seção termina onde?
+    const sectionEndsAt = sectionTop + sectionHeight
+
+    // O final da seção passou da linha alvo?
+    const sectionEndPassedTargetLine = sectionEndsAt <= targetLine
+
+    // Limites da seção
+    const sectionBoundaries = sectionTopReachOrPassedTagetLine && !sectionEndPassedTargetLine
+
+    const sectionId = section.getAttribute('id')
+    const menuElement = document.querySelector(`.menu a[href*=${sectionId}]`)
+
+    menuElement.classList.remove('active')
+    if(sectionBoundaries){
+        menuElement.classList.add('active')
+    }
+
+    //console.log(sectionBoundaries)
 }
 
 function showNavOnScroll(){

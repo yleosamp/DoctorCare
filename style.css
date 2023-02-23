@@ -643,6 +643,51 @@ a.button:hover{
         left: -0.75rem;
     }
 
+
+
+
+
+
+    nav#navigation .menu ul li a.active::after{
+        content: '';
+        height: 0.2rem;
+        background-color: var(--primary-color);
+        width: 0%;
+
+        position: relative;
+        bottom: -1.95rem;
+
+        display: block;
+        transform: padding-inline(0rem);
+        left: -0.75rem;
+    }
+
+
+
+    nav#navigation .menu ul li a.active::after{
+        transition: 200ms;
+        padding-inline: 0.8rem;
+        width: 100%;
+    }
+    
+
+
+    nav#navigation.scroll .menu ul li a.active::after{
+        background-color: white;
+        opacity: 1;
+    }
+
+    nav#navigation .menu .abas-menu li a.active{
+        opacity: 1;
+        font-weight: 700;
+    }
+
+
+    
+
+
+
+
     nav#navigation .menu ul li a:hover::after{
         transition: 200ms;
         padding-inline: 0.8rem;
@@ -667,8 +712,6 @@ a.button:hover{
         height: 3.8rem;
         left: 105.3rem;
         top: 1.5rem;
-
-
     }
 
     nav#navigation.scroll .menu .button-agende{
